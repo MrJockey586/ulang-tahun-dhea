@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selamat Ulang Tahun Dhea</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #fff8dc;
+    color: #5a4d0e;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+  }
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px #fff6aa;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-top: 15px;
+  }
+  p {
+    max-width: 600px;
+    margin: 10px auto 25px auto;
+    font-size: 1.2em;
+    line-height: 1.5;
+    background: #fff9b1;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(90, 77, 14, 0.25);
+  }
+
+  /* Slideshow Gallery */
+  .slideshow-container {
+    max-width: 350px;
+    margin: 25px auto 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(90,77,14,0.2);
+    overflow: hidden;
+    background: #fffcee;
+  }
+  .slide {
+    display: none;
+  }
+  .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .active-slide {
+    display: block;
+  }
+
+  /* Navigation dots */
+  .dots {
+    text-align: center;
+    margin: 10px 0 30px 0;
+  }
+  .dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 7px;
+    background: #f4dc4a;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ac9a0f;
+    transition: background 0.3s ease;
+  }
+  .dots .active {
+    background: #e8b806;
+  }
+
+  /* Balloon styles */
+  .balloon {
+    position: fixed;
+    bottom: -100px;
+    width: 40px;
+    height: 55px;
+    background: #f9e79f;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.8;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    box-shadow: inset -4px -5px 7px #d4ba33;
+  }
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 18px;
+    width: 4px;
+    height: 15px;
+    background: #d4ba33;
+    border-radius: 2px;
+  }
+
+  /* Confetti pieces */
+  .confetti {
+    position: fixed;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #f9e79f;
+    opacity: 0.9;
+    animation: confettiFall linear infinite;
+    border-radius: 20%;
+  }
+
+  /* Animations */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-120vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  @keyframes confettiFall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Responsive text */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1em;
+      padding: 12px 15px;
+    }
+    .slideshow-container {
+      max-width: 90vw;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Selamat Ulang Tahun Dhea yang ke-21 Tahun!</h1>
+<p>selamat ulang tahun seng, yang ke-21 tahun, semoga jadi pribadi yang lebih baik lagi dan semoga hal-hal baik menyertai tahun ini</p>
+<p>semoga di umurnya yang sekarang, apa yang di inginkan dan di harapkan bisa terwujud dan tercapai</p>
+
+<!-- Slideshow container -->
+<div class="slideshow-container" aria-label="Galeri Foto Dhea">
+  <div class="slide active-slide">
+    <img src="data:image/jpeg;base64,/*base64 image 1*/" alt="Foto 1 Dhea" />
+  </div>
+  <div class="slide">
+    <img src="data:image/jpeg;base64,/*base64 image 2*/" alt="Foto 2 Dhea" />
+  </div>
+  <div class="dots" role="tablist" aria-label="Navigasi galeri foto">
+    <span class="dot active" role="tab" aria-selected="true" aria-controls="slide1" tabindex="0"></span>
+    <span class="dot" role="tab" aria-selected="false" aria-controls="slide2" tabindex="-1"></span>
+  </div>
+</div>
+
+<script>
+  // Ganti bagian src sesuai foto base64
+  const photos = [
+    "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAADhP0VFAAAAM1BMVEUA////19fXm5ubf399xcXHo6Ojs7OzT09Pj4+Pq6urU1NTR0dDe3t7a2trX19fZ2dnR0dHd3d3E1Vy0AAAAAXRSTlMAQObYZgAAAIlJREFUeNrtwQkOwyAMBNB3vgu57v7fuqOzBAitbQOyg9wmt6LIxn5kRysulij7xYEGBo+H/OvGytVe+BWlff9rL6X6lRF5rrzMQx43hXk3ml+v7qqgaHHmOqbSQTc1HgMd1pQFgEADQMGgzABAoBwBMAwEoBwCBAaRwMACgHAMwDAKgHAGQBAYDAGgHAAoBwwASBgHoMAAAAAAAACgHBMAHcwAAiqUcbyzN9MAAAAASUVORK5CYII=",
+    "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAADhP0VFAAAAM1BMVEUA////19fXm5ubf399xcXHo6Ojs7OzT09Pj4+Pq6urU1NTR0dDe3t7a2trX19fZ2dnR0dHd3d3E1Vy0AAAAXRSTlMAQObYZgAAAKZJREFUeNrtwQkOwyAMBNB3vgu57v7fuqOzBAitbQOyg9wmt6LIxn5kRysulij7xYEGBo+H/OvGytVe+BWlff9rL6X6lRF5rrzMQx43hXk3ml+v7qqgaHHmOqbSQTc1HgMd1pQFgEADQMGgzABAoBwBMAwEoBwCBAaRwMACgHAMwDAKgHAGQBAYDAGgHAAoBwwASBgHoMAAAAAAAACgHBMAHcwAAiqUcbyzN9MAAAAASUVORK5CYII="
+  ];
+
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(idx) {
+    if (idx < 0) idx = slides.length - 1;
+    if (idx >= slides.length) idx = 0;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active-slide', i === idx);
+      dots[i].classList.toggle('active', i === idx);
+      dots[i].setAttribute('aria-selected', i === idx);
+      dots[i].tabIndex = i === idx ? 0 : -1;
+    });
+    currentSlide = idx;
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+    dot.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') {
+        showSlide((currentSlide + 1) % slides.length);
+        dots[(currentSlide + 1) % slides.length].focus();
+      } else if (e.key === 'ArrowLeft') {
+        showSlide((currentSlide - 1 + slides.length) % slides.length);
+        dots[(currentSlide - 1 + slides.length) % slides.length].focus();
+      }
+    });
+  });
+
+  // Auto slide every 5 seconds
+  setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 5000);
+</script>
+
+<script>
+  // Membuat animasi balon
+  const colors = ['#f9e79f', '#fcf3cf', '#f7dc6f', '#f4d03f', '#d4ba33'];
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function createBalloon() {
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    balloon.style.background = colors[randomInt(0, colors.length - 1)];
+    balloon.style.left = randomInt(5, 95) + 'vw';
+    balloon.style.animationDuration = (randomInt(8, 15)) + 's';
+    balloon.style.width = randomInt(30, 50) + 'px';
+    balloon.style.height = randomInt(40, 60) + 'px';
+    balloon.style.bottom = '-60px';
+    document.body.appendChild(balloon);
+    setTimeout(() => {
+      balloon.remove();
+    }, 15000);
+  }
+  setInterval(createBalloon, 800);
+
+  // Membuat animasi konfeti
+  function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.backgroundColor = colors[randomInt(0, colors.length - 1)];
+    confetti.style.left = randomInt(0, 100) + 'vw';
+    confetti.style.animationDuration = randomInt(3, 6) + 's';
+    confetti.style.width = confetti.style.height = randomInt(5, 10) + 'px';
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 6000);
+  }
+  setInterval(createConfetti, 200);
+</script>
+
+</body>
+</html>
